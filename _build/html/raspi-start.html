@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -8,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Node.Py Documentation 0.1 documentation</title>
+  <title>Setting up Raspberry Pi and SenseHAT &mdash; Node.Py Documentation 0.1 documentation</title>
   
 
   
@@ -31,7 +30,9 @@
   
 
   
-    <link rel="top" title="Node.Py Documentation 0.1 documentation" href="index.html"/> 
+    <link rel="top" title="Node.Py Documentation 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Setting up Node-RED" href="nodered-start.html"/>
+        <link rel="prev" title="Node.Py Documentation" href="index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -62,10 +63,10 @@
         
           
           
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="raspi-start.html">Setting up Raspberry Pi and SenseHAT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="raspi-start.html#from-a-custom-image">From a Custom Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="raspi-start.html#from-a-clean-raspbian-or-noobs-installation">From a Clean Raspbian or NOOBs Installation</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Setting up Raspberry Pi and SenseHAT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#from-a-custom-image">From a Custom Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-a-clean-raspbian-or-noobs-installation">From a Clean Raspbian or NOOBs Installation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="nodered-start.html">Setting up Node-RED</a><ul>
@@ -97,8 +98,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Setting up Raspberry Pi and SenseHAT</li>
       <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/raspi-start.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -106,16 +109,35 @@
 </div>
           <div role="main" class="document">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="setting-up-raspberry-pi-and-sensehat">
+<h1>Setting up Raspberry Pi and SenseHAT<a class="headerlink" href="#setting-up-raspberry-pi-and-sensehat" title="Permalink to this headline">¶</a></h1>
+<p>There are two ways to set up a Raspberry Pi.</p>
+<div class="section" id="from-a-custom-image">
+<h2>From a Custom Image<a class="headerlink" href="#from-a-custom-image" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to get Raspberry Pi and SenseHAT to work is to download our custom image from our download page.  This image will come with all software and hardware set up and read to go.  The only thing you will need to do is to expand your Linux partition by typing this command in the terminal:</p>
+</div>
+<div class="section" id="from-a-clean-raspbian-or-noobs-installation">
+<h2>From a Clean Raspbian or NOOBs Installation<a class="headerlink" href="#from-a-clean-raspbian-or-noobs-installation" title="Permalink to this headline">¶</a></h2>
+<p>If you have a clean installation of Raspbian (or NOOBs) on your Raspberry Pi, you will need to confirm that you are running the latest Raspbian Stretch first:</p>
+<p>If your Raspberry Pi is not running Stretch, chances are that you do not have the SenseHAT extension for Stretch, or the Thorny Python IDE.  We highly recommend that you upgrade to Stretch.  <a class="reference external" href="https://www.raspberrypi.org/blog/raspbian-stretch/">This official guide</a> will show you how to upgrade.</p>
+<p>If you already have Raspbian Stretch running, you will need to set up your locale, keyboard, and timezone.  You can do this with the <cite>raspi-config</cite> utility in your terminal, through System Settings, or with an automatic script:</p>
+<p>If you need to use VNC, SSH, or i2c, you will have to manually enable them in <cite>raspi-config</cite>.</p>
+<p>You will also need to update your Node-RED after this step. Although Node-RED comes pre-installed on the Raspberry Pi, this version is outdated and you will need to update node.js and Node-RED. Please click next and follow the next tutorial.</p>
+</div>
 </div>
 
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nodered-start.html" class="btn btn-neutral float-right" title="Setting up Node-RED">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Node.Py Documentation"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

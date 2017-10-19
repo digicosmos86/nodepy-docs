@@ -1,17 +1,17 @@
-.. nodepy-docs documentation master file, created by
-   sphinx-quickstart on Wed Oct 18 23:12:49 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Node.Py documentation
+Node.Py Documentation
 =====================
+
+Here you will find information on how to set up your Node.Py tools on-the-fly so you can start working on your projects.  We've prepared individual tutorials on setting up Raspberry Pi and SenseHAT, Node-RED, and ESP8266 boards with MicroPython firmware.  You will also find information on how to program individual sensors with MicroPython.
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   getstarted
+   raspi-start
+   nodered-start
+   esp-start
+   program-mpy
 
 Indices and tables
 ==================
