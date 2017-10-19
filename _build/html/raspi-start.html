@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Setting up Raspberry Pi and SenseHAT &mdash; Node.Py Documentation 0.1 documentation</title>
@@ -12,9 +13,10 @@
 
   
   
+  
+  
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -30,26 +32,46 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Node.Py Documentation 0.1 documentation" href="index.html"/>
         <link rel="next" title="Setting up Node-RED" href="nodered-start.html"/>
         <link rel="prev" title="Node.Py Documentation" href="index.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="index.html" class="fa fa-home"> Node.Py Documentation</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Node.Py Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -57,85 +79,129 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+            
+            
+              
+            
+            
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Setting up Raspberry Pi and SenseHAT</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setting up Raspberry Pi and SenseHAT</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#from-a-custom-image">From a Custom Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#from-a-clean-raspbian-or-noobs-installation">From a Clean Raspbian or NOOBs Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="nodered-start.html">Setting up Node-RED</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nodered-start.html#setting-up-node-red-on-raspberry-pi">Setting up Node-RED on Raspberry Pi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nodered-start.html#setting-up-node-red-on-a-server">Setting up Node-RED on a Server</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="nodered-start.html">Setting up Node-RED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="esp-start.html">Setting up the ESP8266 Board with MicroPython firmware</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Node.Py Documentation</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Node.Py Documentation</a>
+        
       </nav>
 
 
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Setting up Raspberry Pi and SenseHAT</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Setting up Raspberry Pi and SenseHAT</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/raspi-start.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/raspi-start.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="setting-up-raspberry-pi-and-sensehat">
 <h1>Setting up Raspberry Pi and SenseHAT<a class="headerlink" href="#setting-up-raspberry-pi-and-sensehat" title="Permalink to this headline">¶</a></h1>
 <p>There are two ways to set up a Raspberry Pi.</p>
 <div class="section" id="from-a-custom-image">
 <h2>From a Custom Image<a class="headerlink" href="#from-a-custom-image" title="Permalink to this headline">¶</a></h2>
-<p>The easiest way to get Raspberry Pi and SenseHAT to work is to download our custom image from our download page.  This image will come with all software and hardware set up and read to go.  The only thing you will need to do is to expand your Linux partition by typing this command in the terminal:</p>
+<p>The easiest way to get Raspberry Pi and SenseHAT to work is to download our custom image from <a class="reference external" href="http://nodepy.us/downloads">our download page</a>.  This image will come with all software and hardware set up and read to go.  The only thing you will need to do is to expand your Linux partition by typing this command in the terminal:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo raspi-config --expand-rootfs
+$ sudo reboot
+</pre></div>
+</div>
 </div>
 <div class="section" id="from-a-clean-raspbian-or-noobs-installation">
 <h2>From a Clean Raspbian or NOOBs Installation<a class="headerlink" href="#from-a-clean-raspbian-or-noobs-installation" title="Permalink to this headline">¶</a></h2>
 <p>If you have a clean installation of Raspbian (or NOOBs) on your Raspberry Pi, you will need to confirm that you are running the latest Raspbian Stretch first:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ lsa-release -a
+</pre></div>
+</div>
 <p>If your Raspberry Pi is not running Stretch, chances are that you do not have the SenseHAT extension for Stretch, or the Thorny Python IDE.  We highly recommend that you upgrade to Stretch.  <a class="reference external" href="https://www.raspberrypi.org/blog/raspbian-stretch/">This official guide</a> will show you how to upgrade.</p>
 <p>If you already have Raspbian Stretch running, you will need to set up your locale, keyboard, and timezone.  You can do this with the <cite>raspi-config</cite> utility in your terminal, through System Settings, or with an automatic script:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo bash &lt;<span class="o">(</span>curl -SL https://gist.githubusercontent.com/adoyle/71803222aff301da9662/raw/e40f2a447e0ae333801e6fddf5e6bdb7430c289d/raspi-init.sh<span class="o">)</span>
+</pre></div>
+</div>
 <p>If you need to use VNC, SSH, or i2c, you will have to manually enable them in <cite>raspi-config</cite>.</p>
 <p>You will also need to update your Node-RED after this step. Although Node-RED comes pre-installed on the Raspberry Pi, this version is outdated and you will need to update node.js and Node-RED. Please click next and follow the next tutorial.</p>
 </div>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nodered-start.html" class="btn btn-neutral float-right" title="Setting up Node-RED">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nodered-start.html" class="btn btn-neutral float-right" title="Setting up Node-RED" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Node.Py Documentation"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Node.Py Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -145,12 +211,13 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Paul Xu.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 
@@ -168,7 +235,8 @@
             VERSION:'0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

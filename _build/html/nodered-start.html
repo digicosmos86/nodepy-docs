@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Setting up Node-RED &mdash; Node.Py Documentation 0.1 documentation</title>
@@ -12,9 +13,10 @@
 
   
   
+  
+  
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -30,26 +32,46 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Node.Py Documentation 0.1 documentation" href="index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="esp-start.html"/>
+        <link rel="next" title="Setting up the ESP8266 Board with MicroPython firmware" href="esp-start.html"/>
         <link rel="prev" title="Setting up Raspberry Pi and SenseHAT" href="raspi-start.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
-          <a href="index.html" class="fa fa-home"> Node.Py Documentation</a>
-        
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Node.Py Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -57,57 +79,89 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
           
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+            
+            
+              
+            
+            
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="raspi-start.html">Setting up Raspberry Pi and SenseHAT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="raspi-start.html#from-a-custom-image">From a Custom Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="raspi-start.html#from-a-clean-raspbian-or-noobs-installation">From a Clean Raspbian or NOOBs Installation</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Setting up Node-RED</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="raspi-start.html">Setting up Raspberry Pi and SenseHAT</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setting up Node-RED</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-node-red-on-raspberry-pi">Setting up Node-RED on Raspberry Pi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-up-node-red-on-a-server">Setting up Node-RED on a Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-node-red-on-the-cloud">Setting Up Node-RED on the Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-node-red">Running Node-RED</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="esp-start.html">Setting up the ESP8266 Board with MicroPython firmware</a></li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Node.Py Documentation</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Node.Py Documentation</a>
+        
       </nav>
 
 
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Setting up Node-RED</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Setting up Node-RED</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/nodered-start.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/nodered-start.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="setting-up-node-red">
 <h1>Setting up Node-RED<a class="headerlink" href="#setting-up-node-red" title="Permalink to this headline">¶</a></h1>
@@ -115,23 +169,67 @@
 <div class="section" id="setting-up-node-red-on-raspberry-pi">
 <h2>Setting up Node-RED on Raspberry Pi<a class="headerlink" href="#setting-up-node-red-on-raspberry-pi" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to set up Node-RED on your Raspberry Pi is to use this command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo bash &lt;<span class="o">(</span>curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered<span class="o">)</span>
+</pre></div>
+</div>
 <p>You will also need to install some useful nodes as well:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo npm install -g node-red-dashboard
+$ sudo npm install -g node-red-contrib-python3-function
+$ sudo npm install -g node-red-contrib-web-worldmap
+</pre></div>
+</div>
 </div>
 <div class="section" id="setting-up-node-red-on-a-server">
 <h2>Setting up Node-RED on a Server<a class="headerlink" href="#setting-up-node-red-on-a-server" title="Permalink to this headline">¶</a></h2>
+<p>The benefit of running Node-RED on a Raspberry Pi is that you can create flows that control the SenseHAT.  However, sometimes it is easier to have it run on a server.  To do this, you need to, first, make sure you have node.js set up on the server.  You can use this command to check:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ node --version
+</pre></div>
+</div>
+<p>If you are running node.js version 6.x and above, you are ready to install Node-RED.  Otherwise, go to <a class="reference external" href="https://nodejs.org/en/download/">the official node.js download page</a> to install the LTS version.</p>
+<p>npm will be automatically installed with node.js.  On Linux systems, you can run the following command to install Node-RED.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo npm install -g node-red
+$ sudo npm install -g node-red-dashboard
+$ sudo npm install -g node-red-contrib-python3-function
+$ sudo npm install -g node-red-contrib-web-worldmap
+</pre></div>
+</div>
+<p>On Windows systems, you can start a command line window with administrative privileges: Start Menu -&gt; Windows System -&gt; right click on Command Line and select run as administrator.  Then, run the following commands:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ npm install -g node-red
+$ npm install -g node-red-dashboard
+$ npm install -g node-red-contrib-python3-function
+$ npm install -g node-red-contrib-web-worldmap
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-node-red-on-the-cloud">
+<h2>Setting Up Node-RED on the Cloud<a class="headerlink" href="#setting-up-node-red-on-the-cloud" title="Permalink to this headline">¶</a></h2>
+<p>There are also benefits running Node-RED on a Cloud Platform.  The Node-RED official websites have exellent instructions on setting up Node-RED on different cloud platforms.  We recommend that you use the IBM Bluemix platform since IBM has better support for Node-RED.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://nodered.org/docs/platforms/bluemix">IBM Bluemix</a></li>
+<li><a class="reference external" href="https://nodered.org/docs/platforms/aws">Amazon Web Services</a></li>
+<li><a class="reference external" href="https://nodered.org/docs/platforms/azure">Microsoft Azure</a></li>
+</ul>
+</div>
+<div class="section" id="running-node-red">
+<h2>Running Node-RED<a class="headerlink" href="#running-node-red" title="Permalink to this headline">¶</a></h2>
+<p>To launch the Node-RED web-based flow editor, go to <a class="reference external" href="http://127.0.0.1:1880">http://127.0.0.1:1880</a> in your browser.</p>
 </div>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="esp-start.html" class="btn btn-neutral float-right" title="&lt;no title&gt;">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="esp-start.html" class="btn btn-neutral float-right" title="Setting up the ESP8266 Board with MicroPython firmware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="raspi-start.html" class="btn btn-neutral" title="Setting up Raspberry Pi and SenseHAT"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="raspi-start.html" class="btn btn-neutral" title="Setting up Raspberry Pi and SenseHAT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -141,12 +239,13 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Paul Xu.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
 </footer>
+
         </div>
       </div>
 
@@ -164,7 +263,8 @@
             VERSION:'0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
