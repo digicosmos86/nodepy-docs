@@ -98,6 +98,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="nodered-start.html">Setting up Node-RED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="esp-start.html">Setting up the ESP8266 Board with MicroPython firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="picamera-start.html">Getting Started with Raspberry Pi Camera</a></li>
 </ul>
 
             
@@ -175,12 +176,12 @@ $ sudo reboot
 <div class="section" id="from-a-clean-raspbian-or-noobs-installation">
 <h2>From a Clean Raspbian or NOOBs Installation<a class="headerlink" href="#from-a-clean-raspbian-or-noobs-installation" title="Permalink to this headline">¶</a></h2>
 <p>If you have a clean installation of Raspbian (or NOOBs) on your Raspberry Pi, you will need to confirm that you are running the latest Raspbian Stretch first:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ lsa-release -a
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /etc/os-release
 </pre></div>
 </div>
 <p>If your Raspberry Pi is not running Stretch, chances are that you do not have the SenseHAT extension for Stretch, or the Thorny Python IDE.  We highly recommend that you upgrade to Stretch.  <a class="reference external" href="https://www.raspberrypi.org/blog/raspbian-stretch/">This official guide</a> will show you how to upgrade.</p>
 <p>If you already have Raspbian Stretch running, you will need to set up your locale, keyboard, and timezone.  You can do this with the <cite>raspi-config</cite> utility in your terminal, through System Settings, or with an automatic script:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo bash &lt;<span class="o">(</span>curl -SL https://gist.githubusercontent.com/adoyle/71803222aff301da9662/raw/e40f2a447e0ae333801e6fddf5e6bdb7430c289d/raspi-init.sh<span class="o">)</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># bash &lt;(curl -SL https://gist.githubusercontent.com/adoyle/71803222aff301da9662/raw/e40f2a447e0ae333801e6fddf5e6bdb7430c289d/raspi-init.sh)</span>
 </pre></div>
 </div>
 <p>If you need to use VNC, SSH, or i2c, you will have to manually enable them in <cite>raspi-config</cite>.</p>

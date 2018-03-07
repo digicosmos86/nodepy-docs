@@ -11,3 +11,4 @@ Click any link below to get started.
    raspi-start
    nodered-start
    esp-start
+   picamera-start

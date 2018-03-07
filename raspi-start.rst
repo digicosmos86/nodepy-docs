@@ -20,7 +20,7 @@ If you have a clean installation of Raspbian (or NOOBs) on your Raspberry Pi, yo
 
 .. code-block:: bash
 
-   $ lsa-release -a
+   $ cat /etc/os-release
 
 If your Raspberry Pi is not running Stretch, chances are that you do not have the SenseHAT extension for Stretch, or the Thorny Python IDE.  We highly recommend that you upgrade to Stretch.  `This official guide <https://www.raspberrypi.org/blog/raspbian-stretch/>`_ will show you how to upgrade.
 
@@ -28,7 +28,7 @@ If you already have Raspbian Stretch running, you will need to set up your local
 
 .. code-block:: bash
 
-   $ sudo bash <(curl -SL https://gist.githubusercontent.com/adoyle/71803222aff301da9662/raw/e40f2a447e0ae333801e6fddf5e6bdb7430c289d/raspi-init.sh)
+   # bash <(curl -SL https://gist.githubusercontent.com/adoyle/71803222aff301da9662/raw/e40f2a447e0ae333801e6fddf5e6bdb7430c289d/raspi-init.sh)
 
 If you need to use VNC, SSH, or i2c, you will have to manually enable them in `raspi-config`.
 

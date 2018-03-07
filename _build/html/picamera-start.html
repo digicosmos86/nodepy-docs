@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started with Raspberry Pi Camera &mdash; Node.Py Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Node.Py Documentation 0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Setting up the ESP8266 Board with MicroPython firmware" href="esp-start.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Node.Py Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="raspi-start.html">Setting up Raspberry Pi and SenseHAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodered-start.html">Setting up Node-RED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="esp-start.html">Setting up the ESP8266 Board with MicroPython firmware</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started with Raspberry Pi Camera</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-installation">Hardware installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-setup">Software setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#turning-on-the-camera-interface-through-raspi-config">Turning on the camera interface through <cite>raspi-config</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#turning-on-the-camera-interface-through-the-gui">Turning on the camera interface through the GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-your-configuration">Test your configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#programming-your-picamera">Programming your PiCamera</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#starting-a-preview">Starting a preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#taking-a-picture">Taking a picture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#capturing-timelapse-sequences">Capturing timelapse sequences</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#controlling-the-picamera-using-node-red">Controlling the PiCamera using Node-RED</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Node.Py Documentation</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started with Raspberry Pi Camera</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/picamera-start.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-with-raspberry-pi-camera">
+<h1>Getting Started with Raspberry Pi Camera<a class="headerlink" href="#getting-started-with-raspberry-pi-camera" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will go through how to set up the Raspberry Pi Camera.  We will go through the installation, enabling camera from the Pi, testing the camera, and writing Python code for taking individual pictures. We will also cover how to set up Node-RED to easily take pictures with the PiCamera or control the camera remotely the PiCamera remotely.</p>
+<div class="section" id="hardware-installation">
+<h2>Hardware installation<a class="headerlink" href="#hardware-installation" title="Permalink to this headline">¶</a></h2>
+<p>First, find the camera port on the Raspberry Pi 3. It is located right next to the HDMI port.  Gently lift the white collar on the port.  Next, insert the cable into the camera port, the side with blue texts facing the Ethernet port.  Make sure that the cable is inserted all the way in. Gently push down the white collar to secure the cable.</p>
+<a class="reference internal image-reference" href="https://picamera.readthedocs.io/en/release-1.13/_images/good_connection.jpg"><img alt="https://picamera.readthedocs.io/en/release-1.13/_images/good_connection.jpg" class="align-center" src="https://picamera.readthedocs.io/en/release-1.13/_images/good_connection.jpg" style="width: 640px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you also need to have a SenseHAT installed, make sure that you stick the cable through the slot on the SenseHAT first. Otherwise it will be difficult to install the PiCamera after you install SenseHAT.</p>
+</div>
+</div>
+<div class="section" id="software-setup">
+<h2>Software setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
+<p>The camera interface on the Raspberry Pi is not turned on by default.  You will need to manually turn it on.  There are two ways to do this:</p>
+<ol class="arabic simple">
+<li>Through the <cite>raspi-config</cite> utility</li>
+<li>Through the Raspberry Pi settings on the desktop.</li>
+</ol>
+<div class="section" id="turning-on-the-camera-interface-through-raspi-config">
+<h3>Turning on the camera interface through <cite>raspi-config</cite><a class="headerlink" href="#turning-on-the-camera-interface-through-raspi-config" title="Permalink to this headline">¶</a></h3>
+<p>Type the following command in the terminal (located on the task bar, or press <cite>Ctrl+Alt+T</cite>):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo raspi-config
+</pre></div>
+</div>
+<p>In the terminal interface that follows, choose <cite>Interfacing Options</cite>, and then <cite>Camera</cite>. Choose yes, save the configuration, and reboot the Raspberry Pi.</p>
+</div>
+<div class="section" id="turning-on-the-camera-interface-through-the-gui">
+<h3>Turning on the camera interface through the GUI<a class="headerlink" href="#turning-on-the-camera-interface-through-the-gui" title="Permalink to this headline">¶</a></h3>
+<p>Start the Raspberry Pi Configuration utility and enable the camera module:</p>
+<a class="reference internal image-reference" href="https://picamera.readthedocs.io/en/release-1.13/_images/enable_camera.png"><img alt="https://picamera.readthedocs.io/en/release-1.13/_images/enable_camera.png" class="align-center" src="https://picamera.readthedocs.io/en/release-1.13/_images/enable_camera.png" style="width: 640px;" /></a>
+<p>You will also need to reboot your Raspberry Pi after this.</p>
+</div>
+</div>
+<div class="section" id="test-your-configuration">
+<h2>Test your configuration<a class="headerlink" href="#test-your-configuration" title="Permalink to this headline">¶</a></h2>
+<p>To make sure that your Camera is set up properly, use this command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ raspistill -o image.jpg
+</pre></div>
+</div>
+<p>A preview of the camera should appear, and after 5 seconds, you will see an image called <cite>image.jpg</cite> in the <cite>homepi</cite> folder.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">If you are using VNC, you will need to go to <cite>settings</cite> of the VNC client on the Raspberry Pi.  Navigate to <strong>Menu &gt; Options &gt; Troubleshooting</strong> and select <strong>Enable experimental direct capture mode</strong>.</p>
+</div>
+<p>Next, make sure that you have the Python library installed. In the terminal, type this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python3 -c <span class="s2">&quot;import picamera&quot;</span>
+</pre></div>
+</div>
+<p>If no error messages pop up, congratulations.  You’ve configured your Raspberry Pi correctly.</p>
+</div>
+<div class="section" id="programming-your-picamera">
+<h2>Programming your PiCamera<a class="headerlink" href="#programming-your-picamera" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When trying out these scripts do <em>not</em> name your file <code class="file docutils literal"><span class="pre">picamera.py</span></code>.
+Naming scripts after existing Python modules will cause errors when you
+try and import those modules (because Python checks the current directory
+before checking other paths).</p>
+</div>
+<div class="section" id="starting-a-preview">
+<h3>Starting a preview<a class="headerlink" href="#starting-a-preview" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">picamera</span> <span class="k">import</span> <span class="n">PiCamera</span>
+<span class="n">camera</span> <span class="o">=</span> <span class="n">PiCamera</span><span class="p">()</span>
+
+<span class="n">camera</span><span class="o">.</span><span class="n">resolution</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">)</span> <span class="c1"># 4:3 aspect ratio</span>
+<span class="n">camera</span><span class="o">.</span><span class="n">start_preview</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You will need the first two lines before you instruct the PiCamera to do anything.  The thrid line sets up the resolution for the camera. The camera supports taking 4K videos at 30FPS!</p>
+</div>
+<div class="section" id="taking-a-picture">
+<h3>Taking a picture<a class="headerlink" href="#taking-a-picture" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">picamera</span> <span class="k">import</span> <span class="n">PiCamera</span>
+
+<span class="n">camera</span> <span class="o">=</span> <span class="n">PiCamera</span><span class="p">()</span>
+<span class="n">camera</span><span class="o">.</span><span class="n">resolution</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1600</span><span class="p">,</span> <span class="mi">1200</span><span class="p">)</span> <span class="c1"># 4:3 aspect ratio</span>
+
+<span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># warming up</span>
+<span class="n">camera</span><span class="o">.</span><span class="n">capture</span><span class="p">(</span><span class="s1">&#39;foo.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="capturing-timelapse-sequences">
+<h3>Capturing timelapse sequences<a class="headerlink" href="#capturing-timelapse-sequences" title="Permalink to this headline">¶</a></h3>
+<p>The simplest way to capture long time-lapse sequences is with the
+<code class="xref py py-meth docutils literal"><span class="pre">capture_continuous()</span></code> method. With this method, the camera
+captures images continually until you tell it to stop. Images are automatically
+given unique names and you can easily control the delay between captures. The
+following example shows how to capture images with a 5 minute delay between
+each shot::</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">picamera</span> <span class="k">import</span> <span class="n">PiCamera</span>
+
+<span class="n">camera</span> <span class="o">=</span> <span class="n">PiCamera</span><span class="p">()</span>
+<span class="n">camera</span><span class="o">.</span><span class="n">start_preview</span><span class="p">()</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">camera</span><span class="o">.</span><span class="n">capture_continuous</span><span class="p">(</span><span class="s1">&#39;img</span><span class="si">{counter:03d}</span><span class="s1">.jpg&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Captured </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span> <span class="c1"># wait 5 minutes</span>
+</pre></div>
+</div>
+<p>However, you may wish to capture images at a particular time, say at the start of every hour. This simply requires a refinement of the delay in the loop (the
+<code class="xref py py-mod docutils literal"><span class="pre">datetime</span></code> module is slightly easier to use for calculating dates and
+times; this example also demonstrates the <code class="docutils literal"><span class="pre">timestamp</span></code> template in the
+captured filenames)::</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">picamera</span> <span class="k">import</span> <span class="n">PiCamera</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="k">def</span> <span class="nf">wait</span><span class="p">():</span>
+    <span class="c1"># Calculate the delay to the start of the next hour</span>
+    <span class="n">next_hour</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+        <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">delay</span> <span class="o">=</span> <span class="p">(</span><span class="n">next_hour</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span><span class="o">.</span><span class="n">seconds</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
+
+<span class="n">camera</span> <span class="o">=</span> <span class="n">PiCamera</span><span class="p">()</span>
+<span class="n">camera</span><span class="o">.</span><span class="n">start_preview</span><span class="p">()</span>
+<span class="n">wait</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">camera</span><span class="o">.</span><span class="n">capture_continuous</span><span class="p">(</span><span class="s1">&#39;img{timestamp:%Y-%m-</span><span class="si">%d</span><span class="s1">-%H-%M}.jpg&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Captured </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="controlling-the-picamera-using-node-red">
+<h2>Controlling the PiCamera using Node-RED<a class="headerlink" href="#controlling-the-picamera-using-node-red" title="Permalink to this headline">¶</a></h2>
+<p>Node-RED offers a myriad of functionalities to control the Raspberry Pi. The only thing you need to do is to install the <cite>camerapi</cite> node:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> .node-red
+$ npm install node-red-contrib-camerapi
+</pre></div>
+</div>
+<p>Once the <cite>camerapi</cite> node is installed, start Node-RED by going to the Programming menu, click on Node-RED.  Leave the terminal window open, fire up a new browser window, and go to <a class="reference external" href="http://127.0.0.1:1880">http://127.0.0.1:1880</a>. You will need an <cite>inject</cite> node, and a <cite>camerapi takephoto</cite> node. Drag them to an empty flow, and connect them. Double-click on the <cite>camera pi</cite> node, you will see the following setting:</p>
+<a class="reference internal image-reference" href="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/camera-pi-take-photo.png?w=444&amp;ssl=1"><img alt="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/camera-pi-take-photo.png?w=444&amp;ssl=1" class="align-center" src="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2017/10/camera-pi-take-photo.png?w=444&amp;ssl=1" style="width: 640px;" /></a>
+<p>The only option that needs explanation is the first one.  The <strong>File Mode</strong> option controls how the files are named.  Choose <strong>Generate</strong> and the file name will be generated automatically.  Choose <strong>Filemode</strong>, you can specify the file name.  You can also choose to override the file name using <cite>msg.filename</cite> in the <cite>msg</cite> object passed to the node, so that you can write a function to fine control the filename.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can find your picture under the <cite>/home/pi/Pictures</cite> folder.</p>
+</div>
+<p>Now you can deploy the flow.  Whenever you click the button to the left of the <cite>inject</cite> node, a new picture will be taken.</p>
+<p>Alternatively, you can also change the options of the inject node to have Node-RED take the picture at a certain time interval by changing the <strong>repeat</strong> option.</p>
+<a class="reference internal image-reference" href="https://developer.ibm.com/recipes/wp-content/uploads/sites/41/2016/06/injuct-node.png"><img alt="https://developer.ibm.com/recipes/wp-content/uploads/sites/41/2016/06/injuct-node.png" class="align-center" src="https://developer.ibm.com/recipes/wp-content/uploads/sites/41/2016/06/injuct-node.png" style="width: 640px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="esp-start.html" class="btn btn-neutral" title="Setting up the ESP8266 Board with MicroPython firmware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Paul Xu.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

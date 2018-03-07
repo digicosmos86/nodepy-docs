@@ -10,7 +10,7 @@ The easiest way to set up Node-RED on your Raspberry Pi is to use this command:
 
 .. code-block:: bash
 
-   $ sudo bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+   $ bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 
 You will also need to install some useful nodes as well:
 
